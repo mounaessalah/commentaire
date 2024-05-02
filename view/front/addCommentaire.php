@@ -10,7 +10,6 @@ $commentaire = null;
 $commentaireC = new commentaireC();
 
 if (
-    isset($_POST["id_commentaire"]) &&
     isset($_POST["auteur"]) &&
     isset($_POST["contenu"]) &&
     isset($_POST["date_creation"])&&
