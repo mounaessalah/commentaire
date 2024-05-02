@@ -4,25 +4,19 @@ require_once 'c:/wamp64/www/forum/commentaire/config.php';
 
 class commentaireC
 {
+    
    
 
-    function afficherCommentaire()
-    {
-        $sql = "SELECT forum.*, commentaire.*
-        FROM forum
-        INNER JOIN commentaire ON forum.id_forum = commentaire.id_forum;";
+    
+    public function afficheCommentaire() {
         $db = config::getConnexion();
-        try {
-            $liste = $db->query($sql);
-            // Ajout de messages de débogage
-            if (!$liste) {
-                die('Error: La requête SQL n\'a retourné aucun résultat.');
-            }
-            return $liste;
-        } catch (Exception $e) {
-            die('Error:' . $e->getMessage());
-        }
-    }
+        $query = $db->prepare("SELECT c.*, f.* FROM commentaire c JOIN forum f ON c.id_forum = f.id_forum");
+        $query->execute();
+        $commentaires = $query->fetchAll();
+        return $commentaires;
+      }
+    
+    
 
     public function listCommentaire()
     {
@@ -62,9 +56,9 @@ class commentaireC
         }
     }
 
-    function addCommentaire($commentaire) {
-        $sql = "INSERT INTO commentaire (id_commentaire,auteur,contenu,date_creation) 
-                VALUES (:id_commentaire,:auteur,:contenu,:date_creation)";
+    function addCommentaire(commentaire  $commentaire) {
+        $sql = "INSERT INTO commentaire (id_commentaire,auteur,contenu,date_creation,id_forum) 
+                VALUES (:id_commentaire ,:auteur ,:contenu ,:date_creation ,:id_forum)";
         $db = config::getConnexion();
         try {
             $query = $db->prepare($sql);

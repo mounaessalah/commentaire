@@ -127,7 +127,7 @@ https://templatemo.com/tm-569-edu-meeting
         <div class="col-lg-9 align-self-center">
           <div class="row">
             <div class="col-lg-12">
-              <form id="commentaire" action="addCommentaire.php" method="post">
+              <form id="commentaire" action="" method="post">
                 <div class="row">
                   <div class="col-lg-12">
                     <h2>Let's get in touch</h2>
@@ -152,7 +152,6 @@ https://templatemo.com/tm-569-edu-meeting
                       <input name="date_creation" type="date" class="form-control" id="date_creation" placeholder="date_creation..." ></input>
                     </fieldset>
                   </div>
-
                   <div class="col-lg-12">
                     <fieldset>
                       <button type="submit" onclick="return validercommentaire()" class="button">save</button>
@@ -160,28 +159,15 @@ https://templatemo.com/tm-569-edu-meeting
                   </div>
                 </div>
               </form>
-             
-            </div>
-          </div>
-        </div>
-       <script>
-         
- function validercommentaire() {
+              <script>
+                function validercommentaire() {
  // Get the form elements
  var id_commentaire = document.getElementById('id_commentaire');
  var auteur = document.getElementById('auteur');
  var contenu = document.getElementById('contenu');
  var date_creation = document.getElementById('date_creation');
 
- // Validate the form fields
- if (isNaN(id_commentaire.value) || id_commentaire.value.trim() === '') {
-     document.getElementById('erreurid_commentaire').innerText = 'Le champ id_commentaire doit être un nombre';
-     id_commentaire.style.border = '2px solid red';
-     return false;
- } else {
-     document.getElementById('erreurid_commentaire').innerText = '';
-     id_commentaire.style.border = '2px solid green';
- }
+
  if (/[^a-zA-Z0-9]/.test(auteur.value)) {
      document.getElementById('erreurauteur').innerText = 'Le champ auteur ne doit contenir que des lettres et des chiffres';
      auteur.style.border = '2px solid red';
@@ -218,19 +204,14 @@ https://templatemo.com/tm-569-edu-meeting
      contenu.style.border = '2px solid green';
  }
 
- if (date_creation.value.trim() === '') {
-     document.getElementById('erreurdate_creation').innerText = 'Le champ date_creation est obligatoire';
-     date_creation.style.border = '2px solid red';
-     return false;
- } else {
-     document.getElementById('erreurdate_creation').innerText = '';
-     date_creation.style.border = '2px solid green';
- }
 
- // All validations pass
  return true;
 }
-       </script>
+              </script>
+             
+            </div>
+          </div>
+        </div>
         <div class="col-lg-3">
           <div class="right-info">
             <ul>

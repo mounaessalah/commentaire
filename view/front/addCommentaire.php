@@ -1,6 +1,6 @@
 <?php
-require_once "c:/wamp64/www/forum/commentaire/controller/commentaireC.php";
-require_once "c:/wamp64/www/forum/commentaire/model/commentaire.php";
+include_once "c:/wamp64/www/forum/commentaire/controller/commentaireC.php";
+include_once "c:/wamp64/www/forum/commentaire/model/commentaire.php";
 
 $error = "";
 // create commentaire
@@ -12,22 +12,24 @@ $commentaireC = new commentaireC();
 if (
     isset($_POST["auteur"]) &&
     isset($_POST["contenu"]) &&
-    isset($_POST["date_creation"])&&
-    isset($_POST["id_forum"]) 
+    isset($_POST["date_creation"])
 ) {
     if (
-        !empty($_POST["id_commentaire"]) &&
         !empty($_POST["auteur"]) &&
         !empty($_POST["contenu"]) &&
-        !empty($_POST["date_creation"])&&
-        !empty($_POST["id_forum"])
+        !empty($_POST["date_creation"])
     ) {
+        if (isset($_POST["id_commentaire"])) {
+            $id_commentaire = $_POST["id_commentaire"];
+        } else {
+            $id_commentaire = null; // or some default value
+        }
+    
         $commentaire = new commentaire(
-            $_POST['id_commentaire'],
+            $id_commentaire,
             $_POST['auteur'],
             $_POST['contenu'],
-            $_POST['date_creation'],
-            $_POST['id_forum']
+            $_POST['date_creation']
         );
 
         // Assuming $commentaireC is an instance of your CommentaireController
@@ -35,8 +37,6 @@ if (
         $commentaireC->addCommentaire($commentaire);
         header('Location:http://localhost/forum/commentaire/view/listCommentaire.php');
         exit();
-    } else {
-        $error = "Missing information";
     }
 }
 
@@ -62,7 +62,7 @@ if (
         <?php echo $error; ?>
     </div>
 
-    <form action="" method="POST">
+    <form id="commentaire" method="POST">
         <table>
         <tr>
                 <td><label for="id_commentaire">ID_commentaire :</label></td>
@@ -86,7 +86,7 @@ if (
                 </td>
             </tr>
             <tr>
-                <td><label for="date_creation">Date_création :</label></td>
+                <td><label for="date_creation">Date_creation :</label></td>
                 <td>
                     <input type="date" id="date_creation" name="date_creation" />
                     <div id="erreurdate_creation" style="color: red"></div>
@@ -100,6 +100,7 @@ if (
             </td>
         </table>
     </form>
+    <script src="../js/commentaire.js"></script>
  
 </body>
 </html>

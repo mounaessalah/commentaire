@@ -6,15 +6,7 @@
  var contenu = document.getElementById('contenu');
  var date_creation = document.getElementById('date_creation');
 
- // Validate the form fields
-//  if (isNaN(id_commentaire.value) || id_commentaire.value.trim() === '') {
-//      document.getElementById('erreurid_commentaire').innerText = 'Le champ id_commentaire doit être un nombre';
-//      id_commentaire.style.border = '2px solid red';
-//      return false;
-//  } else {
-//      document.getElementById('erreurid_commentaire').innerText = '';
-//      id_commentaire.style.border = '2px solid green';
-//  }
+
  if (/[^a-zA-Z0-9]/.test(auteur.value)) {
      document.getElementById('erreurauteur').innerText = 'Le champ auteur ne doit contenir que des lettres et des chiffres';
      auteur.style.border = '2px solid red';
@@ -51,15 +43,6 @@
      contenu.style.border = '2px solid green';
  }
 
-//  if (date_creation.value.trim() === '') {
-//      document.getElementById('erreurdate_creation').innerText = 'Le champ date_creation est obligatoire';
-//      date_creation.style.border = '2px solid red';
-//      return false;
-//  } else {
-//      document.getElementById('erreurdate_creation').innerText = '';
-//      date_creation.style.border = '2px solid green';
-//  }
 
- // All validations pass
  return true;
 }
