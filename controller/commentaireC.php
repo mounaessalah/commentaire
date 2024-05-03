@@ -56,23 +56,27 @@ class commentaireC
         }
     }
 
-    function addCommentaire(commentaire  $commentaire) {
-        $sql = "INSERT INTO commentaire (id_commentaire,auteur,contenu,date_creation,id_forum) 
-                VALUES (:id_commentaire ,:auteur ,:contenu ,:date_creation ,:id_forum)";
-        $db = config::getConnexion();
-        try {
-            $query = $db->prepare($sql);
-            $result = $query->execute([
-                'id_commentaire' => $commentaire->getid_commentaire(),
-                'auteur' => $commentaire->getauteur(),
-                'contenu' => $commentaire->getcontenu(),
-                'date_creation' => $commentaire->getdate_creation()
-                
-            ]);
+    function addCommentaire(commentaire $commentaire, $id_forum) {
+    $sql = "INSERT INTO commentaire (id_commentaire, id_forum, auteur, contenu, date_creation) 
+            VALUES (:id_commentaire, :id_forum, :auteur, :contenu, :date_creation)";
+    $db = config::getConnexion();
+    try {
+        $query = $db->prepare($sql);
+        $result = $query->execute([
+            'id_commentaire' => $commentaire->getid_commentaire(),
+            'id_forum' => $id_forum, // Use the provided id_forum
+            'auteur' => $commentaire->getauteur(),
+            'contenu' => $commentaire->getcontenu(),
+            'date_creation' => $commentaire->getdate_creation()
+        ]); 
+        // Handle result as needed
+
+
+
              if ($result) {
                 echo "<script type=\"text/javascript\"> 
                         alert('Ajout avec succès!'); 
-                        window.location.href = 'http://localhost/forum/commentaire/view/listCommentaire.php';
+                        window.location.href = 'http://localhost/forum/commentaire/view/back/listCommentaire.php';
                       </script>";
                 exit(); // Make sure to end the script execution after the redirection
             } else {
@@ -102,7 +106,7 @@ class commentaireC
         }
     }
 
-    function updateCommentaire($commentaire, $id_commentaire) // Modification du paramètre pour utiliser le modèle commentaire
+    function updateCommentaire(commentaire $commentaire, $id_commentaire) // Modification du paramètre pour utiliser le modèle commentaire
     {
         try {
             $db = config::getConnexion();
@@ -125,7 +129,7 @@ class commentaireC
             if ($result) {
                 echo "<script type=\"text/javascript\"> 
                         alert('Mise à jour avec succès!'); 
-                        window.location.href = 'http://localhost/forum/commentaire/view/listCommentaire.php';
+                        window.location.href = 'http://localhost/forum/commentaire/view/back/listCommentaire.php';
                       </script>";
                 exit(); // Assurez-vous de mettre fin à l'exécution du script après la redirection
             } else {

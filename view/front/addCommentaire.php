@@ -34,7 +34,7 @@ if (
 
         // Assuming $commentaireC is an instance of your CommentaireController
         // Add the comment to the database
-        $commentaireC->addCommentaire($commentaire);
+        $commentaireC->addCommentaire($commentaire,$id_forum);
         header('Location:http://localhost/forum/commentaire/view/listCommentaire.php');
         exit();
     }

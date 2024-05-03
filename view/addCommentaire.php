@@ -1,6 +1,6 @@
 <?php
-require_once "c:/wamp64/www/forum/commentaire/controller/commentaireC.php";
-require_once "c:/wamp64/www/forum/commentaire/model/commentaire.php";
+include_once "c:/wamp64/www/forum/commentaire/controller/commentaireC.php";
+include_once "c:/wamp64/www/forum/commentaire/model/commentaire.php";
 
 $error = "";
 // create commentaire
@@ -23,6 +23,12 @@ if (
         !empty($_POST["date_creation"])
        
     ) {
+        if (isset($_POST["id_commentaire"])) {
+            $id_commentaire = $_POST["id_commentaire"];
+        } else {
+            $id_commentaire = null; // or some default value
+        }
+    
         $commentaire = new commentaire(
             $_POST['id_commentaire'],
             $_POST['auteur'],
@@ -33,8 +39,8 @@ if (
 
         // Assuming $commentaireC is an instance of your CommentaireController
         // Add the comment to the database
-        $commentaireC->addCommentaire($commentaire);
-        header('Location:http://localhost/forum/commentaire/view/listCommentaire.php');
+        $commentaireC->addCommentaire($commentaire,$id_forum);
+        header('Location:http://localhost/forum/commentaire/view/back/listCommentaire.php');
         
     } 
     
@@ -62,7 +68,7 @@ if (
         <?php echo $error; ?>
     </div>
 
-    <form action="" method="POST">
+    <form id="commentaire" method="POST">
         <table>
         <tr>
                 <td><label for="id_commentaire">ID_commentaire :</label></td>
@@ -101,6 +107,6 @@ if (
             
         </table>
     </form>
-    <!-- <script src="forum.js"></script> -->
+    <script src="../view/js/commentaire.js"></script>
 </body>
 </html>

@@ -364,7 +364,7 @@ $list = $commentaireC->listCommentaire();
                     <center>
                     <h1>List of commentaire</h1>
     <h2>
-        <a href="addCommentaire.php">Add commentaire</a>
+        <a href="http://localhost/forum/commentaire/view/front/commentaire.html">Add commentaire</a>
     </h2>
 </center>
 <table border="2" align="center" width="70%">

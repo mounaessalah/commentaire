@@ -127,7 +127,7 @@ https://templatemo.com/tm-569-edu-meeting
         <div class="col-lg-9 align-self-center">
           <div class="row">
             <div class="col-lg-12">
-              <form id="commentaire" action="" method="post">
+              <form id="commentaire" action="addCommentaire.php" method="post">
                 <div class="row">
                   <div class="col-lg-12">
                     <h2>Let's get in touch</h2>
@@ -135,79 +135,35 @@ https://templatemo.com/tm-569-edu-meeting
                   <div class="col-lg-4">
                     <fieldset>
                       <input name="id_commentaire" type="text" id="id_commentaire" placeholder="YOUR id*" >
+                      <div id="erreurid_commentaire" style="color: red"></div>
                     </fieldset>
                   </div>
                   <div class="col-lg-4">
                     <fieldset>
                     <input name="auteur" type="text" id="auteur"  placeholder=" auteur..." >
+                    <div id="erreurauteur" style="color: red"></div>
                   </fieldset>
                   </div>
                   <div class="col-lg-4">
                     <fieldset>
                       <input name="contenu" type="text-area" id="contenu" placeholder="YOUR contenu...*" >
+                     <div id="erreurcontenu" style="color: red"></div>
                     </fieldset>
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
                       <input name="date_creation" type="date" class="form-control" id="date_creation" placeholder="date_creation..." ></input>
+                      <div id="erreurdate_creation" style="color: red"></div>
                     </fieldset>
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <button type="submit" onclick="return validercommentaire()" class="button">save</button>
+                      <button  type="submit"  class="button" onclick ="return validercommentaire()">save</button>
                     </fieldset>
                   </div>
                 </div>
               </form>
-              <script>
-                function validercommentaire() {
- // Get the form elements
- var id_commentaire = document.getElementById('id_commentaire');
- var auteur = document.getElementById('auteur');
- var contenu = document.getElementById('contenu');
- var date_creation = document.getElementById('date_creation');
-
-
- if (/[^a-zA-Z0-9]/.test(auteur.value)) {
-     document.getElementById('erreurauteur').innerText = 'Le champ auteur ne doit contenir que des lettres et des chiffres';
-     auteur.style.border = '2px solid red';
-     return false;
- } else if (auteur.value.length > 20) {
-     document.getElementById('erreurauteur').innerText = 'Le champ auteur doit être une chaîne de caractères de 20 caractères maximum';
-     auteur.style.border = '2px solid red';
-     return false;
- } else if (auteur.value.trim() === '') {
-     document.getElementById('erreurauteur').innerText = 'Le champ auteur est obligatoire';
-     auteur.style.border = '2px solid red';
-     return false;
-
- } else {
-     document.getElementById('erreurauteur').innerText = '';
-     auteur.style.border = '2px solid green';
- }
-
- if (/[^a-zA-Z0-9]/.test(contenu.value)) {
-     document.getElementById('erreurcontenu').innerText = 'Le contenu ne doit contenir que des lettres et des chiffres';
-     contenu.style.border = '2px solid red';
-     return false;
- } else if (contenu.value.length > 20) {
-     document.getElementById('erreurcontenu').innerText = 'Le contenu doit être une chaîne de caractères de 20 caractères maximum';
-     contenu.style.border = '2px solid red';
-     return false;
- } else if (contenu.value.trim() === '') {
-     document.getElementById('erreurcontenu').innerText = 'Le champ contenu est obligatoire';
-     contenu.style.border = '2px solid red';
-     return false;
-
- } else {
-     document.getElementById('erreurcontenu').innerText = '';
-     contenu.style.border = '2px solid green';
- }
-
-
- return true;
-}
-              </script>
+              <script src="../js/commentaire.js"></script>
              
             </div>
           </div>

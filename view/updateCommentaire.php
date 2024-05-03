@@ -1,7 +1,7 @@
 <?php
 
 include 'c:/wamp64/www/forum/commentaire/controller/commentaireC.php';
-include 'c:/wamp64/www/forum/commentaire/model/commentaire.php';
+include_once 'c:/wamp64/www/forum/commentaire/model/commentaire.php';
 
 $error = "";
 // create commentaire
@@ -185,14 +185,14 @@ if (
                 </td>
              <td>
 
-                        <input type="submit" value="Update">
+                        <input type="submit" value="Update" onclick="return validercommentaire()">
                     </td>
                     <td>
                         <input type="reset" value="Reset">
                     </td>
         </table>
     </form>
-    <!-- <script src="commentaire.js"></script> -->
+     <script src="commentaire.js"></script>
 
 
     <?php
