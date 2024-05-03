@@ -34,10 +34,7 @@ if (
         $commentaireC->updateCommentaire($commentaire, $_POST['id_commentaire']);
 
         header('Location:http://localhost/forum/commentaire/view/listCommentaire.php');
-    } else
-        $error = "Missing information";
-}
-
+    }}
 ?>
 <html lang="en">
 
@@ -185,14 +182,14 @@ if (
                 </td>
              <td>
 
-                        <input type="submit" value="Update">
+                        <input type="submit" onclick="return validercommentaire()" value="Update">
                     </td>
                     <td>
                         <input type="reset" value="Reset">
                     </td>
         </table>
     </form>
-    <!-- <script src="commentaire.js"></script> -->
+    <script src="../js/commentaire.js"></script>
 
 
     <?php

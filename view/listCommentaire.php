@@ -35,7 +35,9 @@ $list = $commentaireC->listCommentaire();
                 <input type="submit" name="update" value="Update">
                 <input type="hidden" value="<?php echo $commentaire['id_commentaire']; ?>" name="id_commentaire">
             </form>
+            
         </td>
+        
         <td>
             <a href="deleteCommentaire.php?id_commentaire=<?php echo $commentaire['id_commentaire']; ?>"onclick="return confirm ('are you sure you want to delete this record ')">Delete</a>
         </td>
