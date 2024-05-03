@@ -16,7 +16,7 @@ Table of contents
 05. banner
 06. features
 07. testimonials
-08. commentaire
+08. forum
 09. footer
 10. preloader
 11. search
@@ -1320,11 +1320,11 @@ section.our-facts .video img {
 
 /* 
 ---------------------------------------------
-commentaire
+forum
 --------------------------------------------- 
 */
 
-section.commentaire {
+section.forum {
   background-image: url(../images/meetings-bg.jpg);
   background-position: center center;
   background-attachment: fixed;
@@ -1333,13 +1333,13 @@ section.commentaire {
   padding: 140px 0px 0px 0px;
 }
 
-section.commentaire #commentaire {
+section.forum #forum {
   background-color: #fff;
   border-radius: 20px;
   padding: 40px;
 }
 
-section.commentaire #commentaire h2 {
+section.forum #forum h2 {
   text-transform: uppercase;
   color: #1f272b;
   border-bottom: 1px solid #eee;
@@ -1349,7 +1349,7 @@ section.commentaire #commentaire h2 {
   font-weight: 700;
 }
 
-section.commentaire #commentaire input textarea {
+section.forum #forum input {
   width: 60%;
   height: 40px;
   border-radius: 20px;
@@ -1364,7 +1364,7 @@ section.commentaire #commentaire input textarea {
   margin-bottom: 30px;
 }
 
-section.commentaire #commentaire input {
+section.forum #forum input {
   width: 60%;
   min-height: 100px;
   max-height: 140px;
@@ -1380,51 +1380,42 @@ section.commentaire #commentaire input {
   margin-bottom: 30px;
 }
 
-section.commentaire #commentaire button {
-  font-size: 13px;
-  color: #fff;
-  background-color: #a12c2f;
-  padding: 12px 30px;
-  display: inline-block;
-  border-radius: 22px;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: all .3s;
-  border: none;
-  outline: none;
-}
 
-section.commentaire #commentaire button:hover {
-  opacity: 0.9;
-}
+section.forum #forum comment-button {
 
-section.commentaire .right-info {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+
+
+section.forum .right-info {
   background-color: #a12c2f;
   border-radius: 20px;
   padding: 40px;
 }
 
-section.commentaire .right-info ul li {
+section.forum .right-info ul li {
   display: inline-block;
   border-bottom: 1px solid rgba(250,250,250,0.15);
   margin-bottom: 30px;
   padding-bottom: 30px;
 }
 
-section.commentaire .right-info ul li:last-child {
+section.forum .right-info ul li:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
   border-bottom: none;
 }
 
-section.commentaire .right-info ul li h6 {
+section.forum .right-info ul li h6 {
   color: #fff;
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
-section.commentaire .right-info ul li span {
+section.forum .right-info ul li span {
   display: block;
   font-size: 18px;
   color: #fff;
@@ -1804,7 +1795,7 @@ responsive
     margin-top: 15px;
   }
 
-  section.commentaire #commentaire {
+  section.forum #forum {
     margin-bottom: 30px;
   }
 

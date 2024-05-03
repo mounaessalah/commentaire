@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>CreaNova  Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+<!--
+
+TemplateMo 569 Edu Meeting
+
+https://templatemo.com/tm-569-edu-meeting
+
+-->
+  </head>
+
+<body>
+
+  <!-- Sub Header -->
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8">
+          <div class="left-content">
+            <p>This is an educational <em>HTML CSS</em> template by TemplateMo website.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="right-icons">
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-behance"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="index.html" class="logo">
+                          CreaNova
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                          <li class="scroll-to-section"><a href="#ressource">ressource </a></li>
+                          <li class="has-sub">
+                              <a href="#commande">commande</a>
+                              <ul class="sub-menu">
+                                  <li><a href="meetings.html">Upcoming Meetings</a></li>
+                                  <li><a href="meeting-details.html">Meeting Details</a></li>
+                              </ul>
+                          </li>
+                          <li class="scroll-to-section"><a href="#formation">formation</a></li> 
+                          <li class="scroll-to-section"><a href="#evenement">evenement</a></li> 
+                          <li class="has-sub">
+                            <a href="javascript:void(0)">Forum</a>
+                            <ul class="sub-menu">
+                            <li><a  href="#forum">forum</a></li> 
+                            <li><a  href="#commentaire">commentaire</a></li> 
+                    </ul>
+                                
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ***** Main Banner Area Start ***** -->
+  <section class="section main-banner" id="top" data-section="section1">
+      <video autoplay muted loop id="bg-video">
+          <source src="assets/images/course-video.mp4" type="video/mp4" />
+      </video>
+
+      <div class="video-overlay header-text">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="caption">
+              <h6>Hello Students</h6>
+              <h2>Welcome to Education</h2>
+              <p>This is an CreaNova  provided by  a group of young people by <a rel="nofollow" href="https://esprit.tn" target="_blank">esprit</a>.</p>
+              <div class="main-button-red">
+                  <div class="scroll-to-section"><a href="#forum">Join Us Now!</a></div>
+              </div>
+          </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </section>
+  <!-- ***** Main Banner Area End ***** -->
+
+  <section class="forum" id="forum">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 align-self-center">
+          <div class="row">
+            <div class="col-lg-12">
+              <form id="forum" action="addForum.php" method="post">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>Let's get in touch</h2>
+                  </div>
+                  <div class="col-lg-4">
+                    <fieldset>
+                      <input name="id_forum" type="text" id="id_forum" placeholder="YOUR id*" >
+                      <span id="erreurid_forum" style="color: red"></span>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-4">
+                    <fieldset>
+                    <input name="titre" type="text" id="titre"  placeholder=" titre..." >
+                    <span id="erreurtitre" style="color: red"></span>
+                  </fieldset>
+                  </div>
+                  <div class="col-lg-4">
+                    <fieldset>
+                      <input name="description" type="text" id="description" placeholder="YOUR description...*" >
+                      <span id="erreurdescription" style="color: red"></span>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <input name="date" type="date" class="form-control" id="date" placeholder="date..." ></input>
+                      <span id="erreurdate" style="color: red"></span>
+                    </fieldset>
+                  </div>
+                 
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <input name="etat" type="text" class="form-control" id="etat" placeholder="YOUR état..." ></input><br><br>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <select id="categorie"   name="categorie" class="form-control">
+                        <option value="finance">finance</option>
+                        <option value="psychologie">psychologie</option>
+                        <option value="informatique">informatique</option>
+                        <option value="marketing">marketing</option>
+                    </select>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <button type="submit" onclick="return validerforum()" class="button">save>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-20">
+                  <a href="http://localhost/forum/commentaire/view/front/commentaire.html" class="button" target="_blank">Commentaire</a>
+                  <style>
+ .comment-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000;
+  margin: 0;
+}
+                      </style>
+                </div>
+              </form>
+             
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript">
+          function validerforum() {
+   
+   // Get the form elements
+   var id_forum = document.getElementById('id_forum');
+   var titre = document.getElementById('titre');
+   var description = document.getElementById('description');
+   var date = document.getElementById('date');
+   var categorie = document.getElementById('categorie');
+   var etat = document.getElementById('etat');
+
+   // Validate the form fields
+   if (isNaN(id_forum.value) || id_forum.value.trim() === '') {
+       document.getElementById('erreurid_forum').innerText = 'Le champ id_forum doit être un nombre';
+       id_forum.style.border = '2px solid red';
+       return false;
+   } else {
+       document.getElementById('erreurid_forum').innerText = '';
+       id_forum.style.border = '2px solid green';
+   }
+   if (/[^a-zA-Z0-9]/.test(titre.value)) {
+       document.getElementById('erreurtitre').innerText = 'Le champ titre ne doit contenir que des lettres et des chiffres';
+       titre.style.border = '2px solid red';
+       return false;
+   } else if (titre.value.length > 20) {
+       document.getElementById('erreurtitre').innerText = 'Le champ titre doit être une chaîne de caractères de 20 caractères maximum';
+       titre.style.border = '2px solid red';
+       return false;
+   } else if (titre.value.trim() === '') {
+       document.getElementById('erreurtitre').innerText = 'Le champ titre est obligatoire';
+       titre.style.border = '2px solid red';
+       return false;
+
+   } else {
+       document.getElementById('erreurtitre').innerText = '';
+       titre.style.border = '2px solid green';
+   }
+
+   if (/[^a-zA-Z0-9]/.test(description.value)) {
+       document.getElementById('erreurdescription').innerText = 'La description ne doit contenir que des lettres et des chiffres';
+       description.style.border = '2px solid red';
+       return false;
+   } else if (description.value.length > 20) {
+       document.getElementById('erreurdescription').innerText = 'La description doit être une chaîne de caractères de 20 caractères maximum';
+       description.style.border = '2px solid red';
+       return false;
+   } else if (description.value.trim() === '') {
+       document.getElementById('erreurdescription').innerText = 'Le champ description est obligatoire';
+       description.style.border = '2px solid red';
+       return false;
+   } else {
+       document.getElementById('erreurdescription').innerText = '';
+       description.style.border = '2px solid green';
+   }
+
+   if (date.value < new Date().toISOString().split('T')[0]) {
+       document.getElementById('erreurdate').innerText = 'La date doit être supérieure ou égale à la date du jour';
+       date.style.border = '2px solid red';
+       return false;
+   } else {
+       document.getElementById('erreurdate').innerText = '';
+       date.style.border = '2px solid green';
+   }
+
+   if (/[^a-zA-Z0-9]/.test(categorie.value)) {
+       document.getElementById('erreurcategorie').innerText = 'La catégorie ne doit contenir que des lettres et des chiffres';
+       categorie.style.border = '2px solid red';
+       return false;
+   } else if (categorie.value.length > 20) {
+       document.getElementById('erreurcategorie').innerText = 'La catégorie doit être une chaîne de caractères de 20 caractères maximum';
+       categorie.style.border = '2px solid red';
+       return false;
+   } else if (categorie.value.trim() === '') {
+       document.getElementById('erreurcategorie').innerText = 'Le champ catégorie est obligatoire';
+       categorie.style.border = '2px solid red';
+       return false;
+   } else {
+       document.getElementById('erreurcategorie').innerText = '';
+       categorie.style.border = '2px solid green';
+   }
+   // if (etat.value == '') {
+   //     document.getElementById('erreuretat').innerText = 'Le champ état est obligatoire';
+   //     etat.style.border = '2px solid red';
+   //     return false;
+   // } else {
+   //     document.getElementById('erreuretat').innerText = '';
+   //     etat.style.border = '2px solid green';
+   // }
+
+   // If all fields are valid, submit the form
+   return true;
+}
+        </script>
+        <div class="col-lg-3">
+          <div class="right-info">
+            <ul>
+              <li>
+                <h6>Phone Number</h6>
+                <span>010-020-0340</span>
+              </li>
+              <li>
+                <h6>Email Address</h6>
+                <span>CreaNova.esprit.tn</span>
+              </li>
+              <li>
+                <h6>Street Address</h6>
+                <span>Rio de Janeiro - RJ, 22795-008, Brazil</span>
+              </li>
+              <li>
+                <h6>Website URL</h6>
+                <span>www.Creanova.tn</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Copyright © 2022 CreaNova Co., Ltd. All Rights Reserved. 
+          <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script >
+
+
+
+
+  </script>
+    
+
+</body>
+
+</body>
+</html>

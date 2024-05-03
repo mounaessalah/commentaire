@@ -1,5 +1,5 @@
- /* Your CSS styles here */
- .error-message {
+  /* Your CSS styles here */
+  .error-message {
     color: red;
 }
 
@@ -77,7 +77,10 @@ input[type="reset"] {
     border-radius: 4px;
     animation: floatButton 2s infinite;
 }
-
+.comment-button {
+    position: absolute;
+    right: 20px; /* Ajustez cette valeur selon votre besoin */
+}
 @keyframes floatButton {
     0%,
     100% {

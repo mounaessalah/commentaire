@@ -1,9 +1,8 @@
 <?php
-include_once "c:/wamp64/www/forum/commentaire/controller/commentaireC.php";
+include_once "c:/wamp64/www/forum/forum/controller/forumC.php";
 
-
-$commentaireC = new commentaireC();
-$list = $commentaireC->listCommentaire();
+$forumC = new forumC();
+$list = $forumC->listForum();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -362,37 +361,40 @@ $list = $commentaireC->listCommentaire();
                 <table class="table align-items-center mb-0">
                   <body>
                     <center>
-                    <h1>List of commentaire</h1>
-    <h2>
-        <a href="http://localhost/forum/commentaire/view/front/commentaire.html">Add commentaire</a>
-    </h2>
-</center>
-<table border="2" align="center" width="70%">
-    <tr>
-        <th>ID_commentaire</th>
-        <th>Auteur</th>
-        <th>Contenu</th>
-        <th>Date_création</th>
-        <th>Update</th>
-        <th>Delete</th>
-    </tr>
-    <?php foreach ($list as $commentaire) {
-         ?>
-    <tr>
-        <td><?= $commentaire['id_commentaire']; ?></td>
-        <td><?= $commentaire['auteur']; ?></td>
-        <td><?= $commentaire['contenu']; ?></td>
-        <td><?= $commentaire['date_creation']; ?></td>
-        
-        <td align="center">
-            <form method="POST" action="updateCommentaire.php">
-                <input type="submit" name="update" value="Update">
-                <input type="hidden" value="<?php echo $commentaire['id_commentaire']; ?>" name="id_commentaire">
-            </form>
-        </td>
-        <td>
-            <a href="deleteCommentaire.php?id_commentaire=<?php echo $commentaire['id_commentaire']; ?>"onclick="return confirm ('are you sure you want to delete this record ')">Delete</a>
-            </td>
+                        <h1>List of forum</h1>
+                        <h2>
+                            <a href="../front/index.html">Add forum</a>
+                        </h2>
+                    </center>
+                    <table border="2" align="center" width="70%">
+                        <tr>
+                            <th>id_forum</th>
+                            <th>titre</th>
+                            <th>description</th>
+                            <th>date</th>
+                            <th>categorie</th>
+                            <th>etat</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                        <?php foreach ($list as $forum) {
+                             ?>
+                        <tr>
+                            <td><?= $forum['id_forum']; ?></td>
+                            <td><?= $forum['titre']; ?></td>
+                            <td><?= $forum['description']; ?></td>
+                            <td><?= $forum['date']; ?></td>
+                            <td><?= $forum['categorie']; ?></td>
+                            <td><?= $forum['etat']; ?></td>
+                            <td align="center">
+                                <form method="POST" action="updateforum.php">
+                                    <input type="submit" name="update" value="Update">
+                                    <input type="hidden" value="<?php echo $forum['id_forum']; ?>" name="id_forum">
+                                </form>
+                            </td>
+                            <td>
+                                <a href="deleteforum.php?id_forum=<?php echo $forum['id_forum']; ?>"onclick="return confirm ('are you sure you want to delete this record ')">Delete</a>
+                            </td>
                         </tr>
                         <?php } ?>
                     </table>
@@ -516,7 +518,6 @@ $list = $commentaireC->listCommentaire();
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
- 
-  </body>
+</body>
 
 </html>
