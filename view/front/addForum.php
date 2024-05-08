@@ -33,7 +33,7 @@ if (
         );
 
         $forumC->addForum($forum);
-        header('Location:http://localhost/forum/forum/view/listForum.php');
+        header('Location:http://localhost/forum/forum/view/back/listForum.php');
     } 
     }
 ?>

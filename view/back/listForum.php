@@ -364,6 +364,7 @@ $list = $forumC->listForum();
                         <h1>List of forum</h1>
                         <h2>
                             <a href="../front/index.html">Add forum</a>
+
                         </h2>
                     </center>
                     <table border="2" align="center" width="70%">
@@ -376,6 +377,7 @@ $list = $forumC->listForum();
                             <th>etat</th>
                             <th>Update</th>
                             <th>Delete</th>
+                            <th>Commentaire</th>
                         </tr>
                         <?php foreach ($list as $forum) {
                              ?>
@@ -390,11 +392,19 @@ $list = $forumC->listForum();
                                 <form method="POST" action="updateforum.php">
                                     <input type="submit" name="update" value="Update">
                                     <input type="hidden" value="<?php echo $forum['id_forum']; ?>" name="id_forum">
+                                    
                                 </form>
                             </td>
                             <td>
                                 <a href="deleteforum.php?id_forum=<?php echo $forum['id_forum']; ?>"onclick="return confirm ('are you sure you want to delete this record ')">Delete</a>
                             </td>
+                            <td>
+                            <td>
+                            <a href="http://localhost/forum/commentaire/view/front/addCommentaire.php?id_forum=<?php echo $forum['id_forum']; ?>">commentaire</a>
+
+</td>
+
+
                         </tr>
                         <?php } ?>
                     </table>

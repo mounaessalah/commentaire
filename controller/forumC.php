@@ -5,6 +5,16 @@ include_once "c:/wamp64/www/forum/forum/model/forum.php";
 
 class forumC
 { 
+    public function forumExists($id_forum) {
+        // Query the database to check if the provided id_forum exists
+        $db = config::getConnexion();
+        $query = $db->prepare("SELECT COUNT(*) FROM forum WHERE id_forum = :id_forum");
+        $query->execute(['id_forum' => $id_forum]);
+        $count = $query->fetchColumn();
+        
+        // Return true if the forum exists, false otherwise
+        return $count > 0;
+    }
     public function afficheForum() {
         $db = config::getConnexion();
         $query = $db->prepare("SELECT f.*, c.* FROM forum f JOIN commentaire c ON f.id_forum = c.id_forum");
@@ -67,7 +77,7 @@ class forumC
              if ($result) {
                 echo "<script type=\"text/javascript\"> 
                         alert('Ajout avec succès!'); 
-                        window.location.href = 'http://localhost/forum/commentaire/view/back/listCommentaire.php';
+                        window.location.href = 'http://localhost/forum/forum/view/back/listForum.php';
                       </script>";
                 exit(); // Make sure to end the script execution after the redirection
             } else {
